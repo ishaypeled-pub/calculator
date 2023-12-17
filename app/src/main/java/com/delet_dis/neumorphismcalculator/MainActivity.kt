@@ -19,9 +19,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         initListeners()
-
     }
 
     private fun equalsButtonOnclick() {
@@ -73,8 +71,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun onClickOperation(processingOperation: Operation) {
+    private fun onAcButton() {}
 
+    private fun onClickOperation(processingOperation: Operation) {
         if (operation == Operation.EMPTY) {
             if (calculatorDisplayNonMock.text.toString().isNotEmpty()) {
                 firstProcessingNumber =
@@ -95,18 +94,16 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
         clearDisplay()
-
 
         acButton.setOnClickListener {
             clearDisplay()
         }
 
-
         commaButton.setOnClickListener {
             if (calculatorDisplayNonMock.text.toString()
-                    .lastIndexOf(",") != calculatorDisplayNonMock.text.toString().length - 1
+                    .lastIndexOf(",") != calculatorDisplayNonMock.text.toString().length - 1 &&
+                calculatorDisplayNonMock.text.split(',').size == 1
             )
                 calculatorDisplayNonMock.text =
                     "${calculatorDisplayNonMock.text.toString()},"
@@ -118,7 +115,6 @@ class MainActivity : AppCompatActivity() {
 
         multiplyButton.setOnClickListener {
             isAvailableToOperate(Operation.MULTIPLY)
-
         }
 
         minusButton.setOnClickListener {
@@ -126,26 +122,18 @@ class MainActivity : AppCompatActivity() {
             try {
                 if (displayAsString.isNotEmpty()) {
                     onClickOperation(Operation.MINUS)
-                } else if (displayAsString.isEmpty() && displayAsString != "-"
-                ) {
-                    calculatorDisplayNonMock.text =
-                        "${calculatorDisplayNonMock.text.toString()}-"
                 }
             } catch (e: java.lang.NumberFormatException) {
                 clearDisplay()
             }
-
-
         }
 
         plusButton.setOnClickListener {
             isAvailableToOperate(Operation.PLUS)
-
         }
 
         percentButton.setOnClickListener {
             isAvailableToOperate(Operation.PERCENT)
-
         }
 
         plusAndMinusButton.setOnClickListener {
