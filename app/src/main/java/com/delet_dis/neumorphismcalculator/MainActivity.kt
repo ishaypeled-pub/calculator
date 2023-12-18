@@ -3,6 +3,7 @@ package com.delet_dis.neumorphismcalculator
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.math.ceil
@@ -154,6 +155,14 @@ class MainActivity : AppCompatActivity() {
 
         equalsButton.setOnClickListener {
             equalsButtonOnclick()
+        }
+
+        powerButton.setOnClickListener {
+            Toast.makeText(this, "Make me work!", Toast.LENGTH_LONG).show();
+	    // This is called when the power button is pressed
+            // Call the function that performs num1 by power of num2 calculation
+	    // and show the result. explore the code for references on how this is
+	    // done for other operations
         }
     }
 }
