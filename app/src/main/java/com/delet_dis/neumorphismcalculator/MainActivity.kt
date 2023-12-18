@@ -59,6 +59,7 @@ class MainActivity : AppCompatActivity() {
                 .toDouble() / 100000000
             Operation.PERCENT -> (firstProcessingNumber / 100 * secondProcessingNumber * 100000000).roundToLong()
                 .toDouble() / 100000000
+            Operation.POWER -> (Math.pow(firstProcessingNumber, secondProcessingNumber))
             else -> firstProcessingNumber
         }
     }
@@ -154,6 +155,10 @@ class MainActivity : AppCompatActivity() {
 
         equalsButton.setOnClickListener {
             equalsButtonOnclick()
+        }
+
+        powerButton.setOnClickListener {
+            isAvailableToOperate(Operation.POWER)
         }
     }
 }

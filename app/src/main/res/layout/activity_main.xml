@@ -11,7 +11,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:orientation="vertical"
-      app:layout_constraintGuide_percent="0.02" />
+      app:layout_constraintGuide_percent="0.0" />
 
   <androidx.constraintlayout.widget.Guideline
       android:id="@+id/rightGuideline"
@@ -447,8 +447,25 @@
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/firstLineGuideline"
       app:layout_constraintEnd_toStartOf="@+id/secondVerticalLineGuideline"
-      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintStart_toStartOf="@+id/firstVerticalLineGuideline"
       app:layout_constraintTop_toTopOf="@+id/secondLineGuideline" />
+
+  <soup.neumorphism.NeumorphButton
+      android:id="@+id/powerButton"
+      style="@style/Widget.Neumorph.Button"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:drawablePadding="8dp"
+      android:fontFamily="@font/montserrat"
+      android:padding="12dp"
+      android:text="P"
+      android:textColor="@color/colorAccent"
+      android:textSize="35sp"
+      app:layout_constraintBottom_toTopOf="@+id/firstLineGuideline"
+      app:layout_constraintEnd_toStartOf="@+id/firstVerticalLineGuideline"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/secondLineGuideline"
+      app:neumorph_backgroundColor="@color/design_default_color_shadow_dark" />
 
   <soup.neumorphism.NeumorphButton
       android:id="@+id/commaButton"

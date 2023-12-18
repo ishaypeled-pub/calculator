@@ -4,6 +4,7 @@ enum class Operation {
     DIVIDE,
     MULTIPLY,
     PERCENT,
+    POWER,
     MINUS,
     PLUS,
     EMPTY

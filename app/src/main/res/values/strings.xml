@@ -22,4 +22,5 @@
   <string name="calculatorTwo">2</string>
   <string name="calculatorOne">1</string>
   <string name="calculatorZero">0</string>
+    <string name="power">P</string>
 </resources>
